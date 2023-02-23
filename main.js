@@ -60,19 +60,27 @@ addNew.addEventListener('click', () => {
     accept.classList.add('accept')
     newTask.append(accept)
     accept.addEventListener('click', () => {
-        let keyCount = localStorage.length+1
-        inputValue = input.value
-        inputTask.innerText = inputValue
-        newTask.append(inputTask)
-        localStorage.setItem(`task${keyCount}`, inputValue)
-        input.remove()
-        accept.remove()
-        location.reload()
-            inputTask.addEventListener('click', () => {
-            newTask.classList.toggle('newTaskIn')
-            del = true
-            key = `task${i}`
-        })
+        if(input.value == ""){
+            input.remove()
+            accept.remove()
+            location.reload()
+            console.log('pizda')
+        }
+        else {
+            let keyCount = localStorage.length+1
+            inputValue = input.value
+            inputTask.innerText = inputValue
+            newTask.append(inputTask)
+            localStorage.setItem(`task${keyCount}`, inputValue)
+            input.remove()
+            accept.remove()
+            location.reload()
+                inputTask.addEventListener('click', () => {
+                newTask.classList.toggle('newTaskIn')
+                del = true
+                key = `task${i}`
+            })
+        }
     })
 })
 

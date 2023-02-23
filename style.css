@@ -210,7 +210,7 @@ input{
     }
 
     #board2, #board3{
-        min-height: 200px;
+        min-height: 300px;
     }
 
     #taskContainer{
